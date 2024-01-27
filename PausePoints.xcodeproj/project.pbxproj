@@ -15,6 +15,10 @@
 		ECB33E362B63239E0090EF1A /* PausePointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E352B63239E0090EF1A /* PausePointsTests.swift */; };
 		ECB33E402B63239E0090EF1A /* PausePointsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E3F2B63239E0090EF1A /* PausePointsUITests.swift */; };
 		ECB33E422B63239E0090EF1A /* PausePointsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E412B63239E0090EF1A /* PausePointsUITestsLaunchTests.swift */; };
+		ECB33E592B64801F0090EF1A /* EntryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E582B64801F0090EF1A /* EntryType.swift */; };
+		ECB33E5B2B6480480090EF1A /* MomentQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E5A2B6480480090EF1A /* MomentQuestions.swift */; };
+		ECB33E5D2B64806E0090EF1A /* ReflectionPointQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E5C2B64806E0090EF1A /* ReflectionPointQuestions.swift */; };
+		ECB33E5F2B6486310090EF1A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E5E2B6486310090EF1A /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		ECB33E3B2B63239E0090EF1A /* PausePointsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PausePointsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB33E3F2B63239E0090EF1A /* PausePointsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePointsUITests.swift; sourceTree = "<group>"; };
 		ECB33E412B63239E0090EF1A /* PausePointsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePointsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ECB33E582B64801F0090EF1A /* EntryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryType.swift; sourceTree = "<group>"; };
+		ECB33E5A2B6480480090EF1A /* MomentQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentQuestions.swift; sourceTree = "<group>"; };
+		ECB33E5C2B64806E0090EF1A /* ReflectionPointQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionPointQuestions.swift; sourceTree = "<group>"; };
+		ECB33E5E2B6486310090EF1A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,8 @@
 		ECB33E202B63239C0090EF1A /* PausePoints */ = {
 			isa = PBXGroup;
 			children = (
+				ECB33E572B647FF80090EF1A /* Enum */,
+				ECB33E4E2B6464EE0090EF1A /* Model */,
 				ECB33E212B63239C0090EF1A /* PausePointsApp.swift */,
 				ECB33E232B63239C0090EF1A /* ContentView.swift */,
 				ECB33E252B63239C0090EF1A /* Item.swift */,
@@ -130,6 +140,24 @@
 				ECB33E412B63239E0090EF1A /* PausePointsUITestsLaunchTests.swift */,
 			);
 			path = PausePointsUITests;
+			sourceTree = "<group>";
+		};
+		ECB33E4E2B6464EE0090EF1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECB33E5E2B6486310090EF1A /* Entry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECB33E572B647FF80090EF1A /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				ECB33E582B64801F0090EF1A /* EntryType.swift */,
+				ECB33E5A2B6480480090EF1A /* MomentQuestions.swift */,
+				ECB33E5C2B64806E0090EF1A /* ReflectionPointQuestions.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB33E5F2B6486310090EF1A /* Entry.swift in Sources */,
 				ECB33E242B63239C0090EF1A /* ContentView.swift in Sources */,
 				ECB33E262B63239C0090EF1A /* Item.swift in Sources */,
+				ECB33E592B64801F0090EF1A /* EntryType.swift in Sources */,
+				ECB33E5D2B64806E0090EF1A /* ReflectionPointQuestions.swift in Sources */,
+				ECB33E5B2B6480480090EF1A /* MomentQuestions.swift in Sources */,
 				ECB33E222B63239C0090EF1A /* PausePointsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
