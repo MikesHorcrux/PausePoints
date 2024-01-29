@@ -20,6 +20,7 @@ class Entry {
     // The key is the question, and the value is the user's response.
     var responses: [String: String]
 
+    
     /// Initializes a new entry with specified details.
     /// - Parameters:
     ///   - creationDate: The date and time when the entry is created.
@@ -39,6 +40,15 @@ class Entry {
         }
     }
 
+    var relevantQuestions: [String] {
+            switch entryType {
+            case .moment:
+                return MomentQuestions.allCases.map { $0.rawValue }
+            case .reflectionPoint:
+                return ReflectionPointQuestions.allCases.map { $0.rawValue }
+            }
+        }
+    
     /// Updates the response for a specific question in the entry.
     /// - Parameters:
     ///   - question: The question for which the response is being updated.

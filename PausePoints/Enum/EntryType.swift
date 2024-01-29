@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum EntryType {
+enum EntryType: Codable {
     case moment
     case reflectionPoint
 }

@@ -10,16 +10,20 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var entries: [Entry]
 
+    @State var showNewEntry = false
+    
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(entries) { entry in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        EntryView(entry: entry)
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        VStack(alignment: .leading){
+                            Text(Date.now.formatted(date: .long, time: .shortened))
+                        }
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -34,14 +38,17 @@ struct ContentView: View {
                 }
 #endif
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: {showNewEntry.toggle()}) {
+                        Label("Add entry", systemImage: "plus")
                     }
                 }
             }
         } detail: {
             Text("Select an item")
         }
+        .sheet(isPresented: $showNewEntry, content: {
+            NewEntryView(entryType: .reflectionPoint)
+        })
     }
 
     private func addItem() {
@@ -54,7 +61,7 @@ struct ContentView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(entries[index])
             }
         }
     }
@@ -62,5 +69,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Entry.self, inMemory: true)
 }

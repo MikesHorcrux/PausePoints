@@ -19,6 +19,10 @@
 		ECB33E5B2B6480480090EF1A /* MomentQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E5A2B6480480090EF1A /* MomentQuestions.swift */; };
 		ECB33E5D2B64806E0090EF1A /* ReflectionPointQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E5C2B64806E0090EF1A /* ReflectionPointQuestions.swift */; };
 		ECB33E5F2B6486310090EF1A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E5E2B6486310090EF1A /* Entry.swift */; };
+		ECB33E632B6488D00090EF1A /* NewEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E622B6488D00090EF1A /* NewEntryView.swift */; };
+		ECB33E652B6488F60090EF1A /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E642B6488F60090EF1A /* QuestionView.swift */; };
+		ECB33E672B6592900090EF1A /* NewEntrySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E662B6592900090EF1A /* NewEntrySummaryView.swift */; };
+		ECB33E692B65CF310090EF1A /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E682B65CF310090EF1A /* EntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		ECB33E5A2B6480480090EF1A /* MomentQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentQuestions.swift; sourceTree = "<group>"; };
 		ECB33E5C2B64806E0090EF1A /* ReflectionPointQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionPointQuestions.swift; sourceTree = "<group>"; };
 		ECB33E5E2B6486310090EF1A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		ECB33E622B6488D00090EF1A /* NewEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryView.swift; sourceTree = "<group>"; };
+		ECB33E642B6488F60090EF1A /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		ECB33E662B6592900090EF1A /* NewEntrySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntrySummaryView.swift; sourceTree = "<group>"; };
+		ECB33E682B65CF310090EF1A /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 		ECB33E202B63239C0090EF1A /* PausePoints */ = {
 			isa = PBXGroup;
 			children = (
+				ECB33E602B6488910090EF1A /* View */,
 				ECB33E572B647FF80090EF1A /* Enum */,
 				ECB33E4E2B6464EE0090EF1A /* Model */,
 				ECB33E212B63239C0090EF1A /* PausePointsApp.swift */,
@@ -158,6 +167,25 @@
 				ECB33E5C2B64806E0090EF1A /* ReflectionPointQuestions.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		ECB33E602B6488910090EF1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECB33E612B64889D0090EF1A /* NewEntryFlow */,
+				ECB33E682B65CF310090EF1A /* EntryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECB33E612B64889D0090EF1A /* NewEntryFlow */ = {
+			isa = PBXGroup;
+			children = (
+				ECB33E622B6488D00090EF1A /* NewEntryView.swift */,
+				ECB33E642B6488F60090EF1A /* QuestionView.swift */,
+				ECB33E662B6592900090EF1A /* NewEntrySummaryView.swift */,
+			);
+			path = NewEntryFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,9 +322,13 @@
 				ECB33E242B63239C0090EF1A /* ContentView.swift in Sources */,
 				ECB33E262B63239C0090EF1A /* Item.swift in Sources */,
 				ECB33E592B64801F0090EF1A /* EntryType.swift in Sources */,
+				ECB33E632B6488D00090EF1A /* NewEntryView.swift in Sources */,
+				ECB33E672B6592900090EF1A /* NewEntrySummaryView.swift in Sources */,
 				ECB33E5D2B64806E0090EF1A /* ReflectionPointQuestions.swift in Sources */,
 				ECB33E5B2B6480480090EF1A /* MomentQuestions.swift in Sources */,
+				ECB33E652B6488F60090EF1A /* QuestionView.swift in Sources */,
 				ECB33E222B63239C0090EF1A /* PausePointsApp.swift in Sources */,
+				ECB33E692B65CF310090EF1A /* EntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,10 +510,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinglebytes.PausePoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -516,10 +549,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinglebytes.PausePoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
