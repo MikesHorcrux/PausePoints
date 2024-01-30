@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum EntryType: Codable {
-    case moment
-    case reflectionPoint
+enum EntryType: String, Codable {
+    case moment = "Moment"
+    case reflectionPoint = "Reflection Point"
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NewEntryView: View {
     @Environment(\.modelContext) private var modelContext
@@ -14,16 +15,15 @@ struct NewEntryView: View {
     @State private var currentQuestionIndex = 0
     @State private var entry: Entry
     @State private var showSummary = false
-
+    
     init(entryType: EntryType) {
         _entry = State(initialValue: Entry(creationDate: Date(), entryType: entryType))
     }
-
+    
     var body: some View {
         NavigationStack {
             if showSummary {
                 NewEntrySummaryView(entry: $entry) {
-                    // Save action
                     saveEntry()
                     dismiss()
                 }
@@ -37,30 +37,43 @@ struct NewEntryView: View {
                             showSummary = true
                         }
                     }
-
+                    Spacer()
                     HStack {
-                        Button("Back", action: {
-                            if currentQuestionIndex > 0 {
-                                currentQuestionIndex -= 1
+                        Button(
+                            action: {
+                                if currentQuestionIndex > 0 {
+                                    currentQuestionIndex -= 1
+                                }
+                            }, label: {
+                                Image(systemName: "chevron.left")
+                                    .fontWeight(.heavy)
                             }
-                        }).disabled(currentQuestionIndex == 0)
-
+                        )
+                        .disabled(currentQuestionIndex == 0)
+                        
                         Spacer()
-
-                        Button("Next", action: {
+                        
+                        Button(action: {
                             if currentQuestionIndex < entry.relevantQuestions.count - 1 {
                                 currentQuestionIndex += 1
                             } else {
                                 showSummary = true
                             }
+                        }, label: {
+                            Image(systemName: "chevron.right")
+                                .fontWeight(.heavy)
                         })
-                    }.padding()
+                    }
+                    .ignoresSafeArea(.keyboard)
+                    .padding()
                 }
-                .navigationTitle("New Entry")
+//                .navigationTitle(entry.entryType.rawValue)
+//                .navigationBarTitleDisplayMode(.inline)
+                
             }
         }
     }
-
+    
     private func saveEntry() {
         modelContext.insert(entry)
     }
