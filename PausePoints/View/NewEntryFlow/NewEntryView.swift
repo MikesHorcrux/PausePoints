@@ -67,9 +67,12 @@ struct NewEntryView: View {
                     .ignoresSafeArea(.keyboard)
                     .padding()
                 }
-//                .navigationTitle(entry.entryType.rawValue)
-//                .navigationBarTitleDisplayMode(.inline)
-                
+                .toolbar() {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Text(entry.entryType.rawValue)
+                            .foregroundStyle(.accent)
+                    }
+                }
             }
         }
     }

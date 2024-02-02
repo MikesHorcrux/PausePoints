@@ -13,6 +13,7 @@ struct ContentView: View {
     @Query private var entries: [Entry]
 
     @State var showNewEntry = false
+    @State var entryType: EntryType = .moment
     
     var body: some View {
         NavigationSplitView {
@@ -33,21 +34,39 @@ struct ContentView: View {
 #endif
             .toolbar {
 #if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarLeading) {
                     EditButton()
                 }
 #endif
                 ToolbarItem {
-                    Button(action: {showNewEntry.toggle()}) {
-                        Label("Add entry", systemImage: "plus")
+                    Button(action: {
+                        entryType = .moment
+                        showNewEntry.toggle()
+                    }) {
+                        Label("Add moment", systemImage: "tree")
                     }
+                    .frame(width: 35, height: 35)
+                    .buttonStyle(.borderedProminent)
+                    .clipShape(Circle())
+                   
+                }
+                ToolbarItem {
+                    Button(action: {
+                        entryType = .reflectionPoint
+                        showNewEntry.toggle()
+                    }) {
+                        Label("Add reflection", systemImage: "leaf")
+                    }
+                    .frame(width: 33, height: 33)
+                    .buttonStyle(.borderedProminent)
+                    .clipShape(Circle())
                 }
             }
         } detail: {
             Text("Select an item")
         }
         .sheet(isPresented: $showNewEntry, content: {
-            NewEntryView(entryType: .reflectionPoint)
+            NewEntryView(entryType: entryType)
         })
     }
 
