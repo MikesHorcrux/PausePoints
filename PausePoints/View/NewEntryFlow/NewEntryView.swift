@@ -68,10 +68,17 @@ struct NewEntryView: View {
                     .padding()
                 }
                 .toolbar() {
+                    #if os(ios)
                     ToolbarItem(placement: .topBarLeading) {
                         Text(entry.entryType.rawValue)
                             .foregroundStyle(.accent)
                     }
+                    #else
+                    ToolbarItem(placement: .secondaryAction) {
+                        Text(entry.entryType.rawValue)
+                            .foregroundStyle(.accent)
+                    }
+                    #endif
                 }
             }
         }

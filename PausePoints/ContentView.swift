@@ -23,7 +23,11 @@ struct ContentView: View {
                         EntryView(entry: entry)
                     } label: {
                         VStack(alignment: .leading){
-                            Text(Date.now.formatted(date: .long, time: .shortened))
+                            Text(entry.creationDate.formatted(date: .long, time: .shortened))
+                            HStack {
+                                Image(systemName: entry.entryType == .moment ? "leaf" : "tree")
+                                Text(entry.entryType.rawValue)
+                            }
                         }
                     }
                 }
