@@ -32,12 +32,14 @@ struct QuestionView: View {
                 .padding()
         }
         .toolbar {
+            #if os(iOS)
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Continue") {
                     onContinue()
                 }
             }
+            #endif
         }
     }
 }

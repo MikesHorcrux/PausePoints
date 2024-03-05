@@ -68,7 +68,7 @@ struct NewEntryView: View {
                     .padding()
                 }
                 .toolbar() {
-                    #if os(ios)
+                    #if os(iOS)
                     ToolbarItem(placement: .topBarLeading) {
                         Text(entry.entryType.rawValue)
                             .foregroundStyle(.accent)
