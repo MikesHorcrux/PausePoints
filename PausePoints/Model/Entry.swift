@@ -25,6 +25,9 @@ class Entry {
             MomentQuestions.allCases.forEach { self.responses[$0.rawValue] = "" }
         case .reflectionPoint:
             ReflectionPointQuestions.allCases.forEach { self.responses[$0.rawValue] = "" }
+        case .jotDown:
+            JotDownQuestions.allCases.forEach { self.responses[$0.rawValue] = "" }
+           
         }
     }
 
@@ -34,6 +37,8 @@ class Entry {
             return MomentQuestions.allCases.map { $0.rawValue }
         case .reflectionPoint:
             return ReflectionPointQuestions.allCases.map { $0.rawValue }
+        case .jotDown:
+            return JotDownQuestions.allCases.map { $0 .rawValue }
         }
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F148A1A2B9E9649002DD51A /* JotDownQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F148A192B9E9649002DD51A /* JotDownQuestions.swift */; };
+		7F7FCB8F2BA7A522006917BE /* EntryCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FCB8E2BA7A522006917BE /* EntryCatalogView.swift */; };
 		ECB33E222B63239C0090EF1A /* PausePointsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E212B63239C0090EF1A /* PausePointsApp.swift */; };
 		ECB33E242B63239C0090EF1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E232B63239C0090EF1A /* ContentView.swift */; };
 		ECB33E262B63239C0090EF1A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E252B63239C0090EF1A /* Item.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F148A192B9E9649002DD51A /* JotDownQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JotDownQuestions.swift; sourceTree = "<group>"; };
+		7F7FCB8E2BA7A522006917BE /* EntryCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCatalogView.swift; sourceTree = "<group>"; };
 		ECB33E1E2B63239C0090EF1A /* PausePoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PausePoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB33E212B63239C0090EF1A /* PausePointsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePointsApp.swift; sourceTree = "<group>"; };
 		ECB33E232B63239C0090EF1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F7FCB8D2BA7A4FF006917BE /* EntryCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				7F7FCB8E2BA7A522006917BE /* EntryCatalogView.swift */,
+			);
+			path = EntryCatalog;
+			sourceTree = "<group>";
+		};
 		ECB33E152B63239C0090EF1A = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				ECB33E582B64801F0090EF1A /* EntryType.swift */,
+				7F148A192B9E9649002DD51A /* JotDownQuestions.swift */,
 				ECB33E5A2B6480480090EF1A /* MomentQuestions.swift */,
 				ECB33E5C2B64806E0090EF1A /* ReflectionPointQuestions.swift */,
 			);
@@ -172,6 +185,7 @@
 		ECB33E602B6488910090EF1A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7F7FCB8D2BA7A4FF006917BE /* EntryCatalog */,
 				ECB33E612B64889D0090EF1A /* NewEntryFlow */,
 				ECB33E682B65CF310090EF1A /* EntryView.swift */,
 			);
@@ -321,8 +335,10 @@
 				ECB33E5F2B6486310090EF1A /* Entry.swift in Sources */,
 				ECB33E242B63239C0090EF1A /* ContentView.swift in Sources */,
 				ECB33E262B63239C0090EF1A /* Item.swift in Sources */,
+				7F7FCB8F2BA7A522006917BE /* EntryCatalogView.swift in Sources */,
 				ECB33E592B64801F0090EF1A /* EntryType.swift in Sources */,
 				ECB33E632B6488D00090EF1A /* NewEntryView.swift in Sources */,
+				7F148A1A2B9E9649002DD51A /* JotDownQuestions.swift in Sources */,
 				ECB33E672B6592900090EF1A /* NewEntrySummaryView.swift in Sources */,
 				ECB33E5D2B64806E0090EF1A /* ReflectionPointQuestions.swift in Sources */,
 				ECB33E5B2B6480480090EF1A /* MomentQuestions.swift in Sources */,
