@@ -17,7 +17,11 @@ struct NewEntrySummaryView: View {
                List {
                    ForEach(entry.relevantQuestions, id: \.self) { question in
                        VStack(alignment: .leading) {
-                           Text(question).bold()
+                           if question == "" {
+                               Text(Date(), format: Date.FormatStyle().month().day())
+                           } else {
+                               Text(question).bold()
+                           }
                            Text(entry.responses[question, default: "No response"])
                        }
                    }

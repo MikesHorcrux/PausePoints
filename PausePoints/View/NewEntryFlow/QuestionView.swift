@@ -21,10 +21,17 @@ struct QuestionView: View {
     
     var body: some View {
         VStack {
-            Text(question)
-                .font(.headline)
-                .multilineTextAlignment(.leading)
-                .padding()
+            if question == "" {
+                Text(Date(), format: Date.FormatStyle().month().day())
+                    .font(.headline)
+                    .multilineTextAlignment(.leading)
+                    .padding()
+            } else {
+                Text(question)
+                    .font(.headline)
+                    .multilineTextAlignment(.leading)
+                    .padding()
+            }
             
             TextField("Your answer...", text: responseBinding, axis: .vertical)
                 .textFieldStyle(RoundedBorderTextFieldStyle())

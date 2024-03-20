@@ -10,7 +10,9 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var entries: [Entry]
+//    @Query private var entries: [Entry]
+    @Query(sort: \Entry.creationDate, order: .reverse) private var entries: [Entry]
+
 
     @State var showSheet = false
     @State var entryType: EntryType = .moment
