@@ -50,7 +50,7 @@ struct NewEntryView: View {
                             }
                         )
                         .disabled(currentQuestionIndex == 0)
-                        
+                        .buttonStyle(NeumorphicButtonStyle())
                         Spacer()
                         
                         Button(action: {
@@ -63,10 +63,13 @@ struct NewEntryView: View {
                             Image(systemName: "chevron.right")
                                 .fontWeight(.heavy)
                         })
+                        .buttonStyle(NeumorphicButtonStyle())
                     }
+                    
                     .ignoresSafeArea(.keyboard)
                     .padding()
                 }
+                .background(Color("BackgroundColor").ignoresSafeArea(.all))
                 .toolbar() {
                     #if os(iOS)
                     ToolbarItem(placement: .topBarLeading) {

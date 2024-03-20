@@ -19,7 +19,9 @@ struct EntryView: View {
                     }
                 }
             }
+            .scrollContentBackground(.hidden)
         }
+        .background(Color("BackgroundColor"))
         .navigationTitle(entry.creationDate.formatted())
     }
 }

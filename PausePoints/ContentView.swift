@@ -12,8 +12,9 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var entries: [Entry]
 
-    @State var showNewEntry = false
+    @State var showSheet = false
     @State var entryType: EntryType = .moment
+    @State var sheetNavigation: EntryNavigationViews = .catalog
     
     var body: some View {
         NavigationSplitView {
@@ -33,6 +34,8 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .background(Color("BackgroundColor"))
+            .scrollContentBackground(.hidden)
 #if os(macOS)
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
 #endif
@@ -45,7 +48,8 @@ struct ContentView: View {
                
                     ToolbarItem {
                         Button(action: {
-                            showNewEntry.toggle()
+                            sheetNavigation = .catalog
+                            showSheet.toggle()
                         }) {
                             Label("Add new entry", systemImage: "book.pages")
                         }
@@ -58,9 +62,14 @@ struct ContentView: View {
         } detail: {
             Text("Select an item")
         }
-        .sheet(isPresented: $showNewEntry, content: {
-            //NewEntryView(entryType: entryType)
-            EntryCatalogView(entryType: $entryType)
+       
+        .sheet(isPresented: $showSheet, content: {
+            switch sheetNavigation {
+            case .catalog:
+                EntryCatalogView(entryType: $entryType, sheetNavigation: $sheetNavigation)
+            case .entry:
+                NewEntryView(entryType: entryType)
+            }
         })
     }
 

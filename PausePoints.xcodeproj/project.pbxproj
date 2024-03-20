@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7F148A1A2B9E9649002DD51A /* JotDownQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F148A192B9E9649002DD51A /* JotDownQuestions.swift */; };
+		7F1D23FA2BA91FD800CF81E4 /* NeumorphicStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1D23F92BA91FD800CF81E4 /* NeumorphicStyle.swift */; };
+		7F1D23FC2BA920EE00CF81E4 /* NeumorphicButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1D23FB2BA920EE00CF81E4 /* NeumorphicButtonStyle.swift */; };
+		7F7143BC2BA7C882007683FB /* CatalogCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7143BB2BA7C882007683FB /* CatalogCard.swift */; };
+		7F7143BF2BA7CC59007683FB /* EntryNavigationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7143BE2BA7CC59007683FB /* EntryNavigationViews.swift */; };
 		7F7FCB8F2BA7A522006917BE /* EntryCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FCB8E2BA7A522006917BE /* EntryCatalogView.swift */; };
 		ECB33E222B63239C0090EF1A /* PausePointsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E212B63239C0090EF1A /* PausePointsApp.swift */; };
 		ECB33E242B63239C0090EF1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB33E232B63239C0090EF1A /* ContentView.swift */; };
@@ -46,6 +50,10 @@
 
 /* Begin PBXFileReference section */
 		7F148A192B9E9649002DD51A /* JotDownQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JotDownQuestions.swift; sourceTree = "<group>"; };
+		7F1D23F92BA91FD800CF81E4 /* NeumorphicStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicStyle.swift; sourceTree = "<group>"; };
+		7F1D23FB2BA920EE00CF81E4 /* NeumorphicButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicButtonStyle.swift; sourceTree = "<group>"; };
+		7F7143BB2BA7C882007683FB /* CatalogCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCard.swift; sourceTree = "<group>"; };
+		7F7143BE2BA7CC59007683FB /* EntryNavigationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryNavigationViews.swift; sourceTree = "<group>"; };
 		7F7FCB8E2BA7A522006917BE /* EntryCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCatalogView.swift; sourceTree = "<group>"; };
 		ECB33E1E2B63239C0090EF1A /* PausePoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PausePoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB33E212B63239C0090EF1A /* PausePointsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePointsApp.swift; sourceTree = "<group>"; };
@@ -94,10 +102,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F1D23F82BA91FC400CF81E4 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				7F1D23F92BA91FD800CF81E4 /* NeumorphicStyle.swift */,
+				7F1D23FB2BA920EE00CF81E4 /* NeumorphicButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		7F7143BD2BA7CC38007683FB /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7F7143BE2BA7CC59007683FB /* EntryNavigationViews.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		7F7FCB8D2BA7A4FF006917BE /* EntryCatalog */ = {
 			isa = PBXGroup;
 			children = (
 				7F7FCB8E2BA7A522006917BE /* EntryCatalogView.swift */,
+				7F7143BB2BA7C882007683FB /* CatalogCard.swift */,
 			);
 			path = EntryCatalog;
 			sourceTree = "<group>";
@@ -125,6 +151,8 @@
 		ECB33E202B63239C0090EF1A /* PausePoints */ = {
 			isa = PBXGroup;
 			children = (
+				7F1D23F82BA91FC400CF81E4 /* Styles */,
+				7F7143BD2BA7CC38007683FB /* Navigation */,
 				ECB33E602B6488910090EF1A /* View */,
 				ECB33E572B647FF80090EF1A /* Enum */,
 				ECB33E4E2B6464EE0090EF1A /* Model */,
@@ -266,7 +294,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					ECB33E1D2B63239C0090EF1A = {
 						CreatedOnToolsVersion = 15.2;
@@ -335,14 +363,18 @@
 				ECB33E5F2B6486310090EF1A /* Entry.swift in Sources */,
 				ECB33E242B63239C0090EF1A /* ContentView.swift in Sources */,
 				ECB33E262B63239C0090EF1A /* Item.swift in Sources */,
+				7F7143BC2BA7C882007683FB /* CatalogCard.swift in Sources */,
 				7F7FCB8F2BA7A522006917BE /* EntryCatalogView.swift in Sources */,
 				ECB33E592B64801F0090EF1A /* EntryType.swift in Sources */,
 				ECB33E632B6488D00090EF1A /* NewEntryView.swift in Sources */,
 				7F148A1A2B9E9649002DD51A /* JotDownQuestions.swift in Sources */,
 				ECB33E672B6592900090EF1A /* NewEntrySummaryView.swift in Sources */,
 				ECB33E5D2B64806E0090EF1A /* ReflectionPointQuestions.swift in Sources */,
+				7F7143BF2BA7CC59007683FB /* EntryNavigationViews.swift in Sources */,
+				7F1D23FA2BA91FD800CF81E4 /* NeumorphicStyle.swift in Sources */,
 				ECB33E5B2B6480480090EF1A /* MomentQuestions.swift in Sources */,
 				ECB33E652B6488F60090EF1A /* QuestionView.swift in Sources */,
+				7F1D23FC2BA920EE00CF81E4 /* NeumorphicButtonStyle.swift in Sources */,
 				ECB33E222B63239C0090EF1A /* PausePointsApp.swift in Sources */,
 				ECB33E692B65CF310090EF1A /* EntryView.swift in Sources */,
 			);
@@ -415,6 +447,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -476,6 +509,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -503,6 +537,7 @@
 				CODE_SIGN_ENTITLEMENTS = PausePoints/PausePoints.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PausePoints/Preview Content\"";
 				DEVELOPMENT_TEAM = 5V5PZUN2HG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -531,6 +566,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.3;
 			};
 			name = Debug;
 		};
@@ -542,6 +578,7 @@
 				CODE_SIGN_ENTITLEMENTS = PausePoints/PausePoints.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PausePoints/Preview Content\"";
 				DEVELOPMENT_TEAM = 5V5PZUN2HG;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -570,6 +607,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.3;
 			};
 			name = Release;
 		};
@@ -580,6 +618,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5V5PZUN2HG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -603,6 +642,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5V5PZUN2HG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -625,6 +665,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5V5PZUN2HG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -647,6 +688,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5V5PZUN2HG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
