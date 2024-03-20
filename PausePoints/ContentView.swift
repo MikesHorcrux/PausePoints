@@ -12,8 +12,9 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var entries: [Entry]
 
-    @State var showNewEntry = false
+    @State var showSheet = false
     @State var entryType: EntryType = .moment
+    @State var sheetNavigation: EntryNavigationViews = .catalog
     
     var body: some View {
         NavigationSplitView {
@@ -25,7 +26,7 @@ struct ContentView: View {
                         VStack(alignment: .leading){
                             Text(entry.creationDate.formatted(date: .long, time: .shortened))
                             HStack {
-                                Image(systemName: entry.entryType == .moment ? "leaf" : "tree")
+                                Image(systemName: entry.entryType.iconName)
                                 Text(entry.entryType.rawValue)
                             }
                         }
@@ -33,6 +34,8 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .background(Color("BackgroundColor"))
+            .scrollContentBackground(.hidden)
 #if os(macOS)
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
 #endif
@@ -42,35 +45,31 @@ struct ContentView: View {
                     EditButton()
                 }
 #endif
-                ToolbarItem {
-                    Button(action: {
-                        entryType = .moment
-                        showNewEntry.toggle()
-                    }) {
-                        Label("Add moment", systemImage: "tree")
+               
+                    ToolbarItem {
+                        Button(action: {
+                            sheetNavigation = .catalog
+                            showSheet.toggle()
+                        }) {
+                            Label("Add new entry", systemImage: "book.pages")
+                        }
+                        .frame(width: 35, height: 35)
+                        .buttonStyle(.borderedProminent)
+                        .clipShape(Circle())
+                       
                     }
-                    .frame(width: 35, height: 35)
-                    .buttonStyle(.borderedProminent)
-                    .clipShape(Circle())
-                   
-                }
-                ToolbarItem {
-                    Button(action: {
-                        entryType = .reflectionPoint
-                        showNewEntry.toggle()
-                    }) {
-                        Label("Add reflection", systemImage: "leaf")
-                    }
-                    .frame(width: 33, height: 33)
-                    .buttonStyle(.borderedProminent)
-                    .clipShape(Circle())
-                }
             }
         } detail: {
             Text("Select an item")
         }
-        .sheet(isPresented: $showNewEntry, content: {
-            NewEntryView(entryType: entryType)
+       
+        .sheet(isPresented: $showSheet, content: {
+            switch sheetNavigation {
+            case .catalog:
+                EntryCatalogView(entryType: $entryType, sheetNavigation: $sheetNavigation)
+            case .entry:
+                NewEntryView(entryType: entryType)
+            }
         })
     }
 

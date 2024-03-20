@@ -22,9 +22,12 @@ struct NewEntrySummaryView: View {
                        }
                    }
                }
+               .scrollContentBackground(.hidden)
                Button("Save Entry", action: onSave)
+                   .buttonStyle(NeumorphicButtonStyle())
                    .padding()
            }
+           .background(Color("BackgroundColor"))
            .navigationTitle("Summary")
        }
 }
